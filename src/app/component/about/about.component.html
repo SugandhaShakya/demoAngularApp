@@ -1,0 +1,29 @@
+<div class="jumbotron bg-secondary text-white">
+  <h1 class="display-4">About Us</h1>
+  <p class="lead">Find our local store</p>
+  <hr class="my-4" />
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let shop of shops">
+      <div class="card bg-light text-dark">
+        <div class="card-body">
+          <h5 class="card-title">{{ shop?.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Location: {{ shop?.location }}
+          </h6>
+          <p class="card-text">{{ shop?.description }}</p>
+          <p class="font-weight-bold">
+            Opening Date: {{ shop?.openingDate | date }}
+          </p>
+          <button (click)="viewDetail(shop.id)" type="button" class="btn btn-primary">
+            View Detail
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-about-detail
+    (hideEmitter)="hideRespond($event)"
+    *ngIf="selectedShop"
+    [selectedShop]="selectedShop"
+  ></app-about-detail>
+</div>

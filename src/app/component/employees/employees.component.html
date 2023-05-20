@@ -1,0 +1,28 @@
+<div class="jumbotron bg-secondary text-white">
+    <h1 class="display-4">Employees</h1>
+    <p class="lead">Find our Find Our Employees here</p>
+    <hr class="my-4" />
+    <div *ngIf= "error" class="row">
+        <div class="col-md-12">
+            <div class="alert danger">{{error}}</div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-3" *ngFor="let employee of employees">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <h5 class="card-title">{{ employee?.employee_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              Salary: {{ employee?.employee_salary }}
+            </h6>
+            <p class="card-text">{{ employee?.employee_age }}</p>
+            <p class="font-weight-bold">
+              Image: {{ employee?.profile_image }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
