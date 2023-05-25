@@ -12,11 +12,8 @@ export class AboutComponent implements OnInit {
   selectedShop!:Shop | null;
   viewingShop!:Shop;
 
-  // constructor(private shopService: ShopService) {}
   ngOnInit(): void {
-    // this.shopService.getAll().subscribe((response:any)=>{
-    //   this.shops= response;
-    // });
+
     for (let i = 0; i < 10; i++) {
       const shop = new Shop();
       shop.id = i;

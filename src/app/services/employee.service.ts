@@ -11,7 +11,7 @@ export class EmployeeService {
   // URL ='api/v1'
   constructor(private http:HttpClient) { }
   public getAll():Observable<any>{
-    const api = `${AppConstant.SERVER_URL}/employee`
+    const api = `${AppConstant.SERVER_URL_Employee}/employee`
     return this.http.get<any>(api)
   }
 }

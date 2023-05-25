@@ -1,4 +1,5 @@
 export class Employee{
+    
     id !: number;
     employee_name!: String;
     employee_salary !: number;

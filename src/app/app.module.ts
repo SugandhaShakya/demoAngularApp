@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +10,10 @@ import { AboutComponent } from './component/about/about.component';
 import { HomeComponent } from './component/home/home.component';
 import { AboutDetailComponent } from './component/about/about-detail/about-detail.component';
 import { EmployeesComponent } from './component/employees/employees.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeFormComponent } from './component/employee-form/employee-form.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';  
 
 @NgModule({
   declarations: [
@@ -17,13 +22,17 @@ import { EmployeesComponent } from './component/employees/employees.component';
     AboutComponent,
     HomeComponent,
     AboutDetailComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    EmployeeFormComponent,
+    LoginComponent,
+    RegisterComponent
     
   ],
   imports: [ 
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

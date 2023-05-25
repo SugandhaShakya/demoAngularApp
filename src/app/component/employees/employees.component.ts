@@ -16,7 +16,7 @@ export class EmployeesComponent implements OnInit {
   ngOnInit(): void {
     this.employeeService.getAll().subscribe((response:any)=>{
       this.employees= response;
-    }, error=>{
+    }, error=>{ 
       console.error(error);
       this.error='Could not load employee';
       

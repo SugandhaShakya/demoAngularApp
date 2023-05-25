@@ -7,6 +7,14 @@
             <div class="alert danger">{{error}}</div>
         </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <a routerLink="/add-employee" class="btn btn-primary col" >Add Employee</a>
+      </div >
+
+    </div>
+
     <div class="row">
       <div class="col-md-3 mb-3" *ngFor="let employee of employees">
         <div class="card bg-light text-dark">
@@ -22,7 +30,6 @@
           </div>
         </div>
       </div>
-    </div>
-    
+    </div> 
   </div>
   
