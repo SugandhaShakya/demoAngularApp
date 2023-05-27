@@ -4,12 +4,20 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(private authService:AuthService){}
-  logout(){
-    this.authService.logout()
+  loggedIn!: boolean;
+
+  constructor(private authService: AuthService) {
+    this.authService.isLoggedIn().subscribe((isLoggedIn: boolean) => {
+      this.loggedIn = isLoggedIn;
+    });
+
   }
 
+  logout() {
+    this.authService.logout();
+    this.loggedIn = false;
+  }
 }

@@ -1,9 +1,8 @@
 import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
@@ -13,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   submitted : boolean=false;
+ 
   responseFlag={
     sucess:false,
     failure:false
@@ -39,10 +39,15 @@ export class LoginComponent implements OnInit {
     const formData = this.loginForm.value as User;
     this.authService.postLogin(formData).subscribe({next:(response:any)=>{
       this.authService.setAuthToken(response.token)
+      console.log(response);
+      this.authService.setIsAdmin(response.isAdmin);
+
       this.responseFlag.failure= false;
       this.responseFlag.sucess = true;
+
       this.loginForm.reset()
       this.router.navigate(['/home'])
+
       
     },
     error:(error)=>{

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AppConstant } from '../constant/AppConstant';
 
 
 @Injectable({
@@ -7,5 +9,10 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class EShopService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  public getAll():Observable<any>{
+    const api=`${AppConstant.SERVER_URL}/category`;
+    return this.http.get<any>(api)
+  }
 }

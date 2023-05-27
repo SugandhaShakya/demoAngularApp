@@ -1,4 +1,3 @@
-import { AuthGuard } from './guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +12,8 @@ import { EmployeesComponent } from './component/employees/employees.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeFormComponent } from './component/employee-form/employee-form.component';
 import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';  
+import { RegisterComponent } from './component/register/register.component';
+import { CategoryComponent } from './component/category/category.component';  
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { RegisterComponent } from './component/register/register.component';
     EmployeesComponent,
     EmployeeFormComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CategoryComponent
     
   ],
   imports: [ 
